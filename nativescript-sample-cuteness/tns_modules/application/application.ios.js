@@ -72,6 +72,9 @@ var iOSApplication = (function () {
                     if (exports.onLowMemory) {
                         exports.onLowMemory();
                     }
+                },
+                applicationOpenURLSourceApplicationAnnotation: function (application, url, annotation) {
+                      Foundation.NSNotificationCenter.defaultCenter().postNotificationNameObjectUserInfo("com.telerik.TLKApplicationOpenURL", null, { TLKApplicationOpenURL: url , TLKApplication: application })
                 }
             }
         });
